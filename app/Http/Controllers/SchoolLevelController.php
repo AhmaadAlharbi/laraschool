@@ -32,7 +32,9 @@ class SchoolLevelController extends Controller
         ]);
 
         // Optionally, you can return a response indicating success
-        return redirect(route('levels.index'))->with('success', 'School level created successfully');
+        toastr()->success('Data has been saved successfully!', 'Congrats');
+
+        return redirect(route('levels.index'));
     }
     public function edit(SchoolLevel $schoolLevel, $id)
     {
@@ -56,7 +58,9 @@ class SchoolLevelController extends Controller
         ]);
 
         // Redirect back to the index page with a success message
-        return redirect()->route('levels.index')->with('success', 'School level updated successfully.');
+        toastr()->success('Data has been saved successfully!', 'Congrats');
+
+        return redirect()->route('levels.index');
     }
     public function destroy(SchoolLevel $schoolLevel, $id)
     {
@@ -64,6 +68,8 @@ class SchoolLevelController extends Controller
         $schoolLevel = SchoolLevel::findOrFail($id);
 
         $schoolLevel->delete();
-        return redirect()->route('levels.index')->with('success', 'School level deleted successfully.');
+        toastr()->success('Data has been deleted successfully!', 'Congrats');
+
+        return redirect()->route('levels.index');
     }
 }

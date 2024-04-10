@@ -48,6 +48,10 @@
                                         :active="request()->routeIs('subclassrooms')">
                                         {{ __('Sub classrooms') }}
                                     </x-nav-link>
+                                    <x-nav-link :href="route('departments.index')"
+                                        :active="request()->routeIs('departments')">
+                                        {{ __('Departments') }}
+                                    </x-nav-link>
                                 </ul>
                             </x-slot>
 
