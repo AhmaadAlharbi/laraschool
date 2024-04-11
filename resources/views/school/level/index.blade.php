@@ -21,7 +21,7 @@
 
             <div class="overflow-x-auto shadow-md sm:rounded-lg">
                 <table
-                    class="w-full text-sm text-left rtl:text-right divide-y bg-white divide-gray-200 dark:divide-gray-700">
+                    class="w-full text-sm text-left rtl:text-right divide-y bg-white dark:bg-gray-800 dark:text-gray-400 divide-gray-200 dark:divide-gray-700">
                     <thead class="text-xs uppercase dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left dark:bg-gray-800 dark:text-gray-400">

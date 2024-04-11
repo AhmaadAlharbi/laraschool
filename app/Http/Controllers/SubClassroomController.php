@@ -35,7 +35,7 @@ class SubClassroomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //in livewire
     }
 
     /**

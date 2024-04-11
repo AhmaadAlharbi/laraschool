@@ -6,6 +6,7 @@ use App\Http\Controllers\ClassRoomController;
 use App\Http\Controllers\DeparmentController;
 use App\Http\Controllers\SchoolLevelController;
 use App\Http\Controllers\SubClassroomController;
+use App\Http\Controllers\SubjectController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
@@ -22,6 +23,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         Route::resource('classrooms', ClassRoomController::class);
         Route::resource('subclassrooms', SubClassroomController::class);
         Route::resource('departments', DeparmentController::class);
+        Route::resource('subjects', SubjectController::class);
     });
     //$$$$END my route
     Route::middleware('auth')->group(function () {
