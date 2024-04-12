@@ -14,7 +14,10 @@
                 <a href="{{route('classrooms.create')}}"
                     class="text-white hover:bg-blue-900 ml-4 bg-blue-950 py-2 px-4 rounded-lg cursor-pointer mb-10 inline-block">Add
                     new
-                    Level</a>
+                    Classroom</a>
+                <a href="{{route('assign-subjects-to-classroom')}}"
+                    class="text-white hover:bg-blue-900 ml-4 bg-blue-950 py-2 px-4 rounded-lg cursor-pointer mb-10 inline-block">Add
+                    subject to a classroom</a>
 
                 <div class="overflow-x-auto shadow-md sm:rounded-lg">
                     <table

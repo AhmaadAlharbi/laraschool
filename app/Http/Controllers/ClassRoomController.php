@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subject;
 use App\Models\ClassRoom;
+use App\Models\Department;
 use App\Models\SchoolLevel;
 use Illuminate\Http\Request;
 
@@ -79,5 +81,13 @@ class ClassRoomController extends Controller
 
         $classroom->delete();
         return redirect()->route('classrooms.index')->with('success', 'School level deleted successfully.');
+    }
+
+    public function showAssignSubjectsForm()
+    {
+        $classrooms = ClassRoom::all();
+        $subjects = Subject::all();
+        $departments = Department::all();
+        return view('school.classrooms.assignSubjects', compact('classrooms', 'subjects', 'departments'));
     }
 }

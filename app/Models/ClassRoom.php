@@ -20,4 +20,9 @@ class ClassRoom extends Model
     {
         return $this->hasMany(SubClassroom::class);
     }
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'classroom_subject');
+    }
 }
