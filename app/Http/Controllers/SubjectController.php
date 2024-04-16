@@ -50,7 +50,7 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
-        //
+        return view('school.subjects.show', compact('subject'));
     }
 
     /**
@@ -94,5 +94,10 @@ class SubjectController extends Controller
         }
 
         return redirect()->route('subjects.index');
+    }
+    public function assignTeacher(Subject $subject)
+    {
+        return $subject;
+        return view('school.subjects.assignTeacher');
     }
 }

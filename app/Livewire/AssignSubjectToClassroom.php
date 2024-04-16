@@ -2,11 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Models\Subject;
 use Livewire\Component;
 use App\Models\ClassRoom;
 use App\Models\Department;
 use App\Models\SchoolLevel;
-use App\Models\Subject;
+use Illuminate\Support\Facades\DB;
 
 class AssignSubjectToClassroom extends Component
 {

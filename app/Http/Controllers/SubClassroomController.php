@@ -41,10 +41,18 @@ class SubClassroomController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SubClassroom $subClassroom)
+    public function show(SubClassroom $subclassroom)
     {
-        //
+        if (!$subclassroom) {
+            abort(404);
+        }
+
+        // Group subjects by department
+        $groupedSubjects = $subclassroom->classroom->subjects->groupBy('department_id');
+
+        return view('school.subclassrooms.show', compact('subclassroom', 'groupedSubjects'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -82,5 +90,13 @@ class SubClassroomController extends Controller
         $subclassroom->delete();
         toastr()->success('Data has been deleted successfully!', 'Congrats');
         return redirect()->route('subclassrooms.index');
+    }
+    public function showAssignTeachers(SubClassroom $subclassroom)
+    {
+        if (!$subclassroom) {
+            abort(404);
+        }
+        $subjects = $subclassroom->classroom->subjects;
+        return view('school.subclassrooms.show');
     }
 }

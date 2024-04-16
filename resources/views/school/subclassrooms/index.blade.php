@@ -46,7 +46,7 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap dark:text-gray-400 text-blue-900 font-bold">
-                                    <a href="{{route('subclassrooms.show',$subclassroom->class_room_id)}}">
+                                    <a href="{{route('subclassrooms.show',$subclassroom)}}">
                                         {{ $subclassroom->name }}
                                     </a>
                                 </td>

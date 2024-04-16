@@ -26,7 +26,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         Route::resource('departments', DeparmentController::class);
         Route::resource('subjects', SubjectController::class);
         Route::resource('teachers', TeacherController::class);
-        Route::get('/assign-subjects-to-classroom', [ClassroomController::class, 'showAssignSubjectsForm'])->name('assign-subjects-to-classroom');
+        Route::get('/assign-subjects-to-classroom', [ClassroomController::class, 'showAssignSubjectsForm'])
+            ->name('assign-subjects-to-classroom');
+        Route::get('/assign-teachers-to-subcalssrooms/{subclassroom}', [SubClassroomController::class, 'showAssignTeachers'])
+            ->name('assign-teachers-to-subclassroom');
     });
     //$$$$END my route
     Route::middleware('auth')->group(function () {
